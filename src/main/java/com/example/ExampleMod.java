@@ -16,31 +16,31 @@ import java.util.function.Supplier;
 public class ExampleMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
-		System.out.println("Hello Fabric world!");
-
-		// Register command to give speed boost to player
-		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-			dispatcher.register(
-					LiteralArgumentBuilder.<ServerCommandSource>literal("speedboost")
-							.executes(context -> {
-								// Get the player from the command source
-								ServerCommandSource source = context.getSource();
-								if (source.getEntity() instanceof PlayerEntity) {
-									PlayerEntity player = (PlayerEntity) source.getEntity();
-									applySpeedEffectToPlayer(player);
-									source.sendFeedback((Supplier<Text>) Text.of("Speed boost applied!"), false);
-									return Command.SINGLE_SUCCESS;
-								}
-								return 0;
-							})
-			);
-		});
+//		System.out.println("Hello Fabric world!");
+//
+//		// Register command to give speed boost to player
+//		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+//			dispatcher.register(
+//					LiteralArgumentBuilder.<ServerCommandSource>literal("speedboost")
+//							.executes(context -> {
+//								// Get the player from the command source
+//								ServerCommandSource source = context.getSource();
+//								if (source.getEntity() instanceof PlayerEntity) {
+//									PlayerEntity player = (PlayerEntity) source.getEntity();
+//									applySpeedEffectToPlayer(player);
+//									source.sendFeedback((Supplier<Text>) Text.of("Speed boost applied!"), false);
+//									return Command.SINGLE_SUCCESS;
+//								}
+//								return 0;
+//							})
+//			);
+//		});
 	}
 
-	public void applySpeedEffectToPlayer(PlayerEntity player) {
-		if (player != null) {
-			// Apply Speed effect to the player
-			player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 1)); // 600 ticks (30 seconds), level 1
-		}
-	}
+//	public void applySpeedEffectToPlayer(PlayerEntity player) {
+//		if (player != null) {
+//			// Apply Speed effect to the player
+//			player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 1)); // 600 ticks (30 seconds), level 1
+//		}
+//	}
 }
