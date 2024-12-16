@@ -1,24 +1,46 @@
 package com.example;
 
+import com.mojang.brigadier.Command;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.text.Text;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.function.Supplier;
 
 public class ExampleMod implements ModInitializer {
-	public static final String MOD_ID = "modid";
-
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		System.out.println("Hello Fabric world!");
 
-		LOGGER.info("Hello Fabric world!");
+		// Register command to give speed boost to player
+		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+			dispatcher.register(
+					LiteralArgumentBuilder.<ServerCommandSource>literal("speedboost")
+							.executes(context -> {
+								// Get the player from the command source
+								ServerCommandSource source = context.getSource();
+								if (source.getEntity() instanceof PlayerEntity) {
+									PlayerEntity player = (PlayerEntity) source.getEntity();
+									applySpeedEffectToPlayer(player);
+									source.sendFeedback((Supplier<Text>) Text.of("Speed boost applied!"), false);
+									return Command.SINGLE_SUCCESS;
+								}
+								return 0;
+							})
+			);
+		});
+	}
+
+	public void applySpeedEffectToPlayer(PlayerEntity player) {
+		if (player != null) {
+			// Apply Speed effect to the player
+			player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 1)); // 600 ticks (30 seconds), level 1
+		}
 	}
 }
