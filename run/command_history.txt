@@ -1,16 +1,3 @@
-/speedboost
-/gamemode creative
-/registre haha haha
-/login haha
-/register 123 123
-/login haha haha
-/register 123 123
-/register abcdefgh abcdefgh
-/login REDplayer3H!
-//login REDplayer3H!
-/login REDplayer3H!
-/gamemode survival
-/gamemode creative
 /gamemode survival
 /gamemode creative
 /gamemode survival
@@ -46,3 +33,18 @@
 /gamemode survival
 /give @s minecraft:cooked_beef 64
 /time set day
+/weather clear
+/summon minecraft:pig
+/give @s minecraft:acacia_trapdoor
+/give @s minecraft:acacia_trapdoor 64
+/give @s minecraft:diamond_axe
+/summon minecraft:pig
+/summon minecraft:villager
+/effect clear
+/give @s minecraft:dirt 1000
+/give @s minecraft:acacia_slab
+/kill @s
+/time set day
+/gamerule doDaylightCycle
+/gamerule doDaylightCycle false
+/give @s minecraft:cooked_beef 64

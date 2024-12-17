@@ -32,13 +32,13 @@ public class MyHack implements ClientModInitializer {
 
 				// speed:
 				if (speedBoostKey.wasPressed()) {
-					if (!speedIsOn) {
-						speedIsOn = true;
-						player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED).setBaseValue(0.3);
-					} else {
-						speedIsOn = false;
-						player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED).setBaseValue(0.1);
-					}
+					speedIsOn = !speedIsOn;
+				}
+				System.out.println(speedIsOn);
+				if (speedIsOn) {
+					player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED).setBaseValue(0.3);
+				} else {
+					player.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED).setBaseValue(0.1);
 				}
 
 				// jump boost:
@@ -56,8 +56,8 @@ public class MyHack implements ClientModInitializer {
 				if (reachBoostKey.wasPressed()) {
 					if (!reachIsOn) {
 						reachIsOn = true;
-						player.getAttributeInstance(EntityAttributes.ENTITY_INTERACTION_RANGE).setBaseValue(20000);
-						player.getAttributeInstance(EntityAttributes.BLOCK_INTERACTION_RANGE).setBaseValue(20000);
+						player.getAttributeInstance(EntityAttributes.ENTITY_INTERACTION_RANGE).setBaseValue(6);
+						player.getAttributeInstance(EntityAttributes.BLOCK_INTERACTION_RANGE).setBaseValue(6);
 					} else {
 						reachIsOn = false;
 						player.getAttributeInstance(EntityAttributes.ENTITY_INTERACTION_RANGE).setBaseValue(4);
