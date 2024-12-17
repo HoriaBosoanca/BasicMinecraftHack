@@ -30,7 +30,7 @@ bin/
 
 # fabric
 
-run/
+#run/ commented so the built mod is also pushed along with the source code
 
 # java
 

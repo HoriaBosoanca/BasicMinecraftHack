@@ -1,0 +1,48 @@
+/speedboost
+/gamemode creative
+/registre haha haha
+/login haha
+/register 123 123
+/login haha haha
+/register 123 123
+/register abcdefgh abcdefgh
+/login REDplayer3H!
+//login REDplayer3H!
+/login REDplayer3H!
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/register ha1 ha1
+/gamemode creative
+/time set day
+/gamemode survival
+/gamemode creative
+/gamemode s
+/gamemode sur
+/gamemode survival
+/effect give Player933 minecraft:regeneration
+/effect give Player933 minecraft:regeneration infinite 255
+/effect give Player933 minecraft:regeneration infinite 256
+/gamemode creative
+/gamemode s
+/gamemode survival
+/effect clear
+/give @s minecraft:enderman_spawn_egg 64
+/effect clear
+/time set day
+/give @s minecraft:porkchop 64
+/give @s minecraft:beef[ 64
+/give @s minecraft:beef 64
+/give @s minecraft:cooked_beef 64
+/give @s dirt 1000
+/give @s minecraft:enderman_spawn_egg 64
+/give @s minecraft:acacia_slab
+/give @s minecraft:netherite_sword
+/time set day
+/give @s minecraft:netherite_sword
+/gamemode creative
+/gamemode survival
+/give @s minecraft:cooked_beef 64
+/time set day
