@@ -1,9 +1,13 @@
-# Fabric Example Mod
+# Simple hack client for Minecraft 1.21.4
 
-## Setup
+# Install:
+Download both files in fabric-example-mod/run/mods and move them to the mods folder in your Minecraft installation
+Also download and add the Fabric and Fabric API from (here)[https://fabricmc.net/]
 
-For setup instructions please see the [fabric documentation page](https://docs.fabricmc.net/develop/getting-started/setting-up-a-development-environment) that relates to the IDE that you are using.
+# Keybinds:
+F6 to toggle x3 speed boost
+F7 to toggle 3 block jump
+F8 to toggle a little extra reach
+Flight enabled at all times
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Keybinds can be changed in game in options > controls > key binds
