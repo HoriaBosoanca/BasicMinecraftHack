@@ -1,7 +1,7 @@
 # Simple hack client for Minecraft 1.21.4
 
 # Install:
-Download both files in fabric-example-mod/run/mods and move them to the mods folder in your Minecraft installation
+Download both files in run/mods and move them to the mods folder in your Minecraft installation
 
 Also download and add the Fabric and Fabric API from https://fabricmc.net/
 
